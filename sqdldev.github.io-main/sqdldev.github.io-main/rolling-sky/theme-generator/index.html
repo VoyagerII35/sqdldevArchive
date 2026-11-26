@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!-- OwO -->
+<html>
+<head>
+<title>Rolling Sky Theme Generator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="pagename" content="Rolling Sky Theme Generator">
+<meta name="description" content="A tool that helps you align themes.">
+<link rel="stylesheet" href="../global.css">
+<script src="../global.js"></script>
+<script src="../obstacledata.js"></script>
+<script src="../../favicon.js"></script>
+<style>
+html {
+    background: #202124;
+	color: white;
+	position: absolute;
+    width: 100%;
+    margin: 0;
+}
+:root {
+	color-scheme: dark;
+}
+a {
+	text-decoration: underline;
+	color: #88ff79;
+}
+#list {
+	list-style-type: none;
+    margin: 0;
+    padding: 0;
+	user-select: none;
+}
+#list li, #content {
+    padding: 15pt;
+    border: solid;
+    border-radius: 15pt;
+    border-color: #2c2e31;
+    margin-bottom: 5pt;
+    background: #27282b;
+}
+li input[type="text"] {
+	width: 80pt;
+}
+#list label {
+    white-space: nowrap;
+}
+.options {
+    padding: 10pt 0pt;
+}
+.options label {
+	display: block;
+}
+#content {
+    margin-top: 15pt;
+    font-family: monospace;
+	white-space: pre;
+}
+#tool {
+    margin-bottom: 15pt;
+}
+label {
+	user-select: none;
+}
+</style>
+</head>
+<body onload="update();">
+<div style="margin: 15pt;">
+<h1>Theme Change Generator</h1>
+<p style="margin-bottom: 0;">Add a new theme by clicking the +<br>Importing will be added in a later update<br>You can drag elements to reposition them:</p><ol style="margin: 0;"><li>Start dragging on the theme title</li><li>Drop above the title of another theme</li></ol>If something doesn't work, DM me about it.</p>
+<div id="tool">
+<ul id="list">
+<li draggable="true">
+<h2 style="margin-top: 0"></h2>
+<input placeholder="Row Number" type="number" onchange="update();"><input placeholder="Theme ID" type="number" onchange="update();">
+<form class="options" onchange="update();">
+<label><input type="checkbox">Trees</label>
+<label><input type="checkbox">Towers</label>
+<label><input type="checkbox">AltGround</label>
+<label><input type="checkbox">Pyramids</label>
+<label><input type="checkbox">Palm Trees</label>
+<label><input type="checkbox">Slashers</label>
+<label><input type="checkbox">Skyscrapers</label>
+<label><input type="checkbox">Flood Lights</label>
+<label><input type="checkbox">Film Grain Effect</label>
+<label><input type="checkbox">Alt Palm Trees</label>
+<label><input type="checkbox">Teslas</label>
+<label><input type="checkbox">Retro Effects</label>
+<label><input type="checkbox">Green Monitor Effect</label>
+<label><input type="checkbox">Color Monitor Effect</label>
+</form>
+<button class="up" onclick="Move.up(this);">Up</button>
+<button class="down" onclick="Move.down(this);">Down</button>
+<button onclick="this.parentElement.remove();update();">-</button>
+</div>
+</li>
+</ul>
+<div>
+<div class="buttoncontainer">
+<button onclick="Theme.addNew();update();">+</button>
+</div>
+</div>
+<p>
+<label for="isrsucheck"><input type="checkbox" id="isrsucheck" onchange="update();">Generate RSU Themes?</label>
+</p>
+<button onclick="update();">Generate</button>
+<div id="content"></div>
+<h1>Credits</h1>
+<ul>
+<li>sqdldev: Creator</li>
+<li>Porygon Axolotl: Still Encouragement</li>
+<li>Theme Names by DeclanHugoRS</li>
+</ul>
+<h1>Note</h1>
+<p>Have any suggestions / bug reports? DM me.</p>
+</div>
+<script src="index.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+</body>
